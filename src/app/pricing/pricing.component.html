@@ -1,0 +1,25 @@
+<p>
+  pricing works!
+</p>
+
+<p>
+  {{body.voyages}}
+</p>
+<button class='btn btn-warning' *ngIf='!updatingPricing' (click)='toggleForm()'>Update Pricing</button>
+
+<div *ngIf='updatingPricing' class="card">
+  <div class="card-body">
+    <div class="card-title">
+      <h3>Update Voyages</h3>
+    </div>
+    <div class="card-text">
+      <div class="form-group">
+        <label>Content</label>
+        <textarea [(ngModel)]='body.voyages' class="form-control"></textarea>
+      </div>
+      <button class="btn btn-info" (click)='updateVoyages(body)'>Update Voyages</button>
+      <button class="btn btn-warning" (click)='toggleForm()'>Cancel</button>
+
+    </div>
+  </div>
+</div>

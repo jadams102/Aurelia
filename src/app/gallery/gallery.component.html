@@ -1,0 +1,11 @@
+<p>
+  gallery works!
+</p>
+<div class='card' *ngFor = "let gallery of galleries" >
+  <div class="card-body">
+    <div class="card-title" (click)='goToDetailPage(gallery.name)'>
+      <h2>{{gallery.name}}</h2>
+    </div>
+  </div>
+</div>
+<app-upload></app-upload>
