@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 import { FirebaseListObservable } from 'angularfire2/database';
 import { GalleryService } from '../services/gallery.service';
 import { Upload } from '../models/upload.model';
@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   templateUrl: './gallery.component.html',
   styleUrls: ['./gallery.component.css']
 })
-export class GalleryComponent implements OnInit {
+export class GalleryComponent implements OnInit, OnChanges {
 
   galleries: any;
 
@@ -19,6 +19,12 @@ export class GalleryComponent implements OnInit {
     this.galleries = this.galleryService.getGalleries().subscribe(data => {
       this.galleries = data;
     });
+  }
+
+  ngOnChanges() {
+      this.galleries = this.galleryService.getGalleries().subscribe(data => {
+        this.galleries = data;
+      });
   }
 
   goToDetailPage(gallery) {

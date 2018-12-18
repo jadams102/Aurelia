@@ -20,8 +20,11 @@ export class ImageService {
     this.allGalleries = this.database.list('galleries');
   }
 
-  getGallery(galleryPath: string): FirebaseListObservable<Upload[]> {
-    this.gallery = this.database.list('galleries/' + galleryPath);
+  setGallery(galleryPath: string) {
+    this.gallery = this.database.list('galleries/' + galleryPath + '/');
+  }
+
+  getGallery() {
     return this.gallery;
   }
 
