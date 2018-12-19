@@ -26,4 +26,8 @@ export class GalleryDetailComponent implements OnInit {
   goToImageDetail(clickedImage) {
     this.router.navigate(['Gallery', clickedImage.gallery, clickedImage.$key]);
   }
+
+  deleteImage(image) {
+    this.imageService.removeImage(image);
+  }
 }

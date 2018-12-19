@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ContentService } from '../services/content.service';
+import { AuthenticationService } from '../services/authentication.service';
+import { Observable } from 'rxjs/Observable';
+import * as firebase from 'firebase/app';
 
 @Component({
   selector: 'app-pricing',
@@ -10,18 +13,21 @@ export class PricingComponent implements OnInit {
 
   body;
   updatingPricing = false;
+  user: Observable<firebase.User>
 
-  constructor(private content: ContentService) { }
+  constructor(private authService: AuthenticationService, private content: ContentService) { }
 
   ngOnInit() {
     this.body = this.content.getContent().subscribe(data => {
-      this.body = data});
-      console.log(this.body)
+      this.body = data
+    });
+    this.user = this.authService.authUser();
   }
 
   updateVoyages(localContent) {
     this.content.updateContent(localContent);
     this.toggleForm();
+    window.location.reload();
   }
 
   toggleForm() {

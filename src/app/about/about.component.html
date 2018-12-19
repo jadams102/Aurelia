@@ -1,26 +1,78 @@
-<p>
-  about works!
-</p>
-
-<p>
-  {{body.about}}
-</p>
-<button class='btn btn-warning' *ngIf='!updatingAbout' (click)='toggleForm()'>Update About</button>
-
-
-<div *ngIf='updatingAbout' class="card">
-    <div class="card-body">
-      <div class="card-title">
-        <h3>Update About</h3>
-      </div>
-      <div class="card-text">
-        <div class="form-group">
-          <label>Content</label>
-          <textarea [(ngModel)]='body.about' class="form-control"></textarea>
+<div id="aboutSection">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <h2>About Us</h2>
+            <p style="white-space: pre-wrap;">
+              {{body.about}}
+            </p>
+            <div *ngIf='(user|async)?.uid'>
+                <button class='btn btn-warning' *ngIf='!updatingAbout' (click)='toggleForm()'>Update About</button>
+            </div>
+            <button class="contact-btn">Contact Us</button>
+          </div>
         </div>
-        <button class="btn btn-info" (click)='updateAbout(body)'>Update About</button>
-        <button class="btn btn-warning" (click)='toggleForm()'>Cancel</button>
-
+      </div>
+      <div *ngIf='!updatingAbout' class="col-sm-12 col-md-6 col-lg-5 desktop-images">
+        <div class="row">
+          <div class="card">
+            <div class="card-body">
+              <img class='aboutImg' src="assets/img/about-2.JPG" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="card">
+            <div class="card-body">
+              <img class='aboutImg' src="assets/img/about-3.jpg" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="card">
+            <div class="card-body">
+              <img class='aboutImg' src="assets/img/about-1.jpg" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div *ngIf='updatingAbout' class="col-sm-12 col-md-6 col-lg-5">
+        <div class="card">
+          <div class="card-body">
+            <div class="card-title">
+              <h3>Update About</h3>
+            </div>
+            <div class="card-text">
+              <div class="form-group">
+                <label>Content</label>
+                <textarea [(ngModel)]='body.about' class="form-control"></textarea>
+              </div>
+              <button class="btn btn-info" (click)='updateAbout(body)'>Update About</button>
+              <button class="btn btn-warning" (click)='toggleForm()'>Cancel</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mobile-images">
+      <div class="row">
+        <div class="col">
+          <div class="card">
+            <div class="card-body">
+              <img class='aboutImg' src="assets/img/about-1.jpg" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <div class="card-body">
+              <img class='aboutImg' src="assets/img/about-2.JPG" alt="">
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
+</div>

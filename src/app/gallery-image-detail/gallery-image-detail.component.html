@@ -1,4 +1,8 @@
 <p>
   gallery-image-detail works!
 </p>
-<img src="{{imageToDisplay?.url}}" alt="">
+<div class="container">
+  <img src="{{imageToDisplay?.url}}" alt="">
+  <button (click)='deleteImage()'>Delete</button>
+</div>
+

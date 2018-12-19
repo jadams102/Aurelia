@@ -1,9 +1,13 @@
 <p>
   gallery-detail works!
 </p>
-<div *ngFor="let image of images | async" class="card">
-  <div class="card-body">
-      <h1>{{image.$key}}</h1>
-      <a (click)='goToImageDetail(image)'><img src="{{image.url}}"></a>
+<div class="container">
+  <div *ngFor="let image of images | async" class="card">
+    <div class="card-body">
+        <h1>{{image.$key}}</h1>
+        <a (click)='goToImageDetail(image)'><img src="{{image.url}}"></a>
+    </div>
+    <button (click)='deleteImage(image)'>Delete</button>
   </div>
 </div>
+

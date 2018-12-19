@@ -1,0 +1,45 @@
+/* Page Wide */
+
+.container {
+    padding-top: 80px;
+    padding-bottom: 20px;
+}
+
+.contact-btn {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    width: 60%;
+    height: 50px;
+    background-color: rgba(42, 47, 92, 0.6);
+    color: white;
+    border-style: solid;
+    border-color: white;
+    border-radius: 30px;
+    font-weight: bold;
+    font-family: sans-serif;
+    margin-top: 15px;
+}
+
+.card {
+    border-radius: 25px;
+    color: white;
+    background-color: rgba(42, 47, 92, 0.6)
+}
+
+h2 {
+    text-align: center;
+}
+
+textarea {
+    min-height: 200px;
+}
+
+/* Section 1 */
+.contact-section{
+    background-image: url('../../assets/img/contact-bg.jpg');
+    background-size: cover;
+    background-position: center left;
+    padding-top: 50px;
+    padding-bottom: 25px;
+}

@@ -1,0 +1,27 @@
+.footer {
+    background-color: #2E4C6D;
+    color: white;
+}
+.container {
+    padding-top: 30px;
+    padding-bottom: 40px;
+}
+
+.links {
+    display: flex;
+    justify-content: center;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.links p{
+    display: inline-block;
+    text-align: center;
+    margin-right: 10px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+h5 {
+    text-align: center;
+}

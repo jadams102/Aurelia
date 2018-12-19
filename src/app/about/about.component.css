@@ -1,0 +1,75 @@
+/* Page Wide */
+.container {
+    padding-top: 60px;
+}
+
+.contact-btn {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    width: 60%;
+    height: 50px;
+    background-color: rgba(42, 47, 92, 0.6);
+    color: white;
+    border-style: solid;
+    border-color: white;
+    border-radius: 30px;
+    font-weight: bold;
+    font-family: sans-serif;
+    margin-top: 15px;
+}
+
+.card {
+    border-radius: 25px;
+    color: white;
+    background-color: rgba(42, 47, 92, 0.6)
+}
+
+textarea {
+    min-height: 600px;
+}
+
+h2 {
+    text-align: center;
+}
+
+.btn-warning {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/* Section 1 */
+
+#aboutSection {
+    background-image: url('../../assets/img/pricing-bg.jpg');
+    background-size: cover;
+    background-position: center left;
+    padding-top: 50px;
+    padding-bottom: 25px;
+}
+
+.aboutImg {
+    width: 100%;
+    border-radius: 12px;
+}
+
+.mobile-images {
+    display: none;
+}
+
+@media only screen and (max-width: 768px) {
+    .mobile-images {
+      display: block;
+    }
+  }
+
+  .desktop-images {
+    display: block;
+}
+
+@media only screen and (max-width: 768px) {
+    .desktop-images {
+      display: none;
+    }
+  }

@@ -8,15 +8,34 @@ import { BlogPost } from '../models/blog-post.model';
   styleUrls: ['./blog-add.component.css']
 })
 export class BlogAddComponent implements OnInit {
+  
+  addingPost: boolean;
 
   constructor(private postService: BlogPostService) { }
 
   ngOnInit() {
+    this.addingPost = false;
+  }
+
+  toggleNewPost() {
+    if(!this.addingPost) {
+      this.addingPost = true;
+    } else {
+      this.addingPost = false;
+    }
   }
 
   submitPost(title: string, body: string) {
-    const date = new Date().toDateString()
-    let newPost = new BlogPost(title, body, date)
-    this.postService.addPost(newPost);
+    if (title === '') {
+      return alert('Please Enter a Title')
+    } else if (body === '') {
+      return alert('Please enter a post body')
+    } else {
+      this.addingPost = false;
+      const date = new Date().toDateString()
+      let newPost = new BlogPost(title, body, date)
+      this.postService.addPost(newPost);
+    }
+
   }
 }

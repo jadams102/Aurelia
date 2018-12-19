@@ -39,9 +39,9 @@ export class UploadService {
   );
 }
 
-deleteFile(name) {
+deleteFile(name, gallery) {
   const storageRef = firebase.storage().ref();
-  const imgRef = storageRef.child( this.basePath + '/' + name);
+  const imgRef = storageRef.child( '/galleries/' + gallery + '/' + name);
   imgRef.delete()
 }
 

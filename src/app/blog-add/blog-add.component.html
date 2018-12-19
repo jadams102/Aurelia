@@ -1,4 +1,9 @@
-<div class="card">
+<div>
+  <div *ngIf='!addingPost'>
+      <button class="btn btn-info post-btn" (click)='toggleNewPost()'>New Post</button>
+  </div>
+</div>
+<div *ngIf='addingPost' class="card">
   <div class="card-body">
     <div class="card-title">
       <h3>Add Post</h3>
@@ -13,7 +18,8 @@
         <textarea #newBody class="form-control"></textarea>
       </div>
       <button class="btn btn-info" (click)='submitPost(newTitle.value, newBody.value)'>Add Post</button>
+      <button class="btn btn-danger" (click)='toggleNewPost()'>Cancel</button>
+
     </div>
   </div>
 </div>
-

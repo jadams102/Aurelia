@@ -1,0 +1,87 @@
+
+
+/* Page Wide */
+
+.container {
+    padding-top: 60px;
+}
+
+.contact-btn {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    width: 60%;
+    height: 50px;
+    background-color: rgba(42, 47, 92, 0.6);
+    color: white;
+    border-style: solid;
+    border-color: white;
+    border-radius: 30px;
+    font-weight: bold;
+    font-family: sans-serif;
+    margin-top: 15px;
+}
+
+.card {
+    border-radius: 25px;
+    color: white;
+    background-color: rgba(42, 47, 92, 0.6)
+}
+
+/* Section 1 */
+
+#section1 {
+    background-image: url('../../assets/img/home-sec1bg.jpg');
+    background-size: cover;
+    background-position: bottom;
+    padding-top: 50px;
+    padding-bottom: 25px;
+}
+
+hr {
+    color: white;
+    background-color: white;
+}
+
+#headerImg {
+    max-width: 85%;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/* Section 2 */
+
+#section2 {
+    background-image: url('../../assets/img/home-sec2bg.jpg');
+    background-size: cover;
+    background-position: bottom;
+    padding-top: 50px;
+    padding-bottom: 25px;
+    height: 700px;
+}
+
+#section2-card {
+    float: right;
+    display: block;
+}
+
+/* Section 3 */
+
+#section3 {
+    background-image: url('../../assets/img/home-sec3bg.jpg');
+    background-size: cover;
+    background-position: left;
+    padding-top: 50px;
+    padding-bottom: 25px;
+    height: 700px;
+}
+
+#youTubeEmbed {
+    border-style: solid;
+    border-color: white;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    width: 90%;
+}

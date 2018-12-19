@@ -21,11 +21,14 @@ export class GalleryImageDetailComponent implements OnInit {
     this.route.params.forEach((urlParameters) => {
       this.galleryName = urlParameters['name']
       this.imageKey = urlParameters['id'];
-      console.log(this.galleryName, this.imageKey)
     });
     this.imageService.getImageById(this.galleryName.toLowerCase(), this.imageKey).subscribe( data => {
       this.imageToDisplay = data;
-      console.log(this.imageToDisplay)
     });
+  }
+
+  deleteImage() {
+    this.imageService.removeImage(this.imageToDisplay)
+    this.router.navigate(['Gallery']);
   }
 }

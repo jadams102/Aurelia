@@ -1,19 +1,39 @@
-<div class="card">
-  <div class="card-body">
-    <div class="card-title">
-      <h3>Send Us a Message!</h3>
-    </div>
-    <form method="POST" action="https://formspree.io/joeladamsdesign@gmail.com">
-      <div class="form-group">
-          <label for="email">Your Email</label>
-          <input class="form-control" type="email" name="email" placeholder="Your email">
+<div class="contact-section">
+    <div class="container">
+        <div class="row">
+          <div class="hidden-sm col-md-6 col-lg-8">
+      
+          </div>
+          <div class="col-sm-12 col-md-6 col-lg-4">
+              <div class="card">
+                  <div class="card-body">
+                    <h3>Contact Us</h3>
+                    <p>
+                        To plan your voyage or get more information about our services please contact us by phone, email, or the form below. We will be happy to hear from you!<br>
+                        <br>
+                        <strong>Email:</strong> info@schooneraurelia.com<br>
+                        <strong>Phone:</strong> (907) 255 3042<br>
+                        <strong>Mail:</strong><br>
+                        Aurelia Charters<br>
+                        NGOA Marine LLC<br>
+                        P.O. Box 2829<br>
+                        Valdez, AK 99686
+                    </p>
+                    <form (submit)='OnSubmit()' method="POST" action="https://formspree.io/joeladamsdesign@gmail.com">
+                      <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input class="form-control" type="email" name="email" placeholder="Your email">
+                      </div>
+                      <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea class="form-control" name="message" placeholder="Test Message"></textarea>
+                      </div>
+                      <button class='contact-btn' type="submit">Send Message</button>
+                    </form>
+                  </div>
+                </div>
+            </div>
+        </div>
       </div>
-      <div class="form-group">
-          <label for="message">Your Message</label>
-          <textarea class="form-control" name="message" placeholder="Test Message"></textarea>
-      </div>
-      <button type="submit">Send Message</button>
-    </form>
-  </div>
 </div>
 

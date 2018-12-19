@@ -1,18 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
-import { AuthenticationService } from '../services/authentication.service';
-import { Observable } from 'rxjs/Observable';
-import * as firebase from 'firebase/app';
 
 @Component({
-  selector: 'app-navbar',
-  templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css']
+  selector: 'app-footer',
+  templateUrl: './footer.component.html',
+  styleUrls: ['./footer.component.css']
 })
-export class NavbarComponent implements OnInit {
-  user: Observable<firebase.User>
+export class FooterComponent {
 
-  constructor(private authService: AuthenticationService, private router: Router){
+  constructor(private router: Router){
     // override the route reuse strategy
     this.router.routeReuseStrategy.shouldReuseRoute = function(){
        return false;
@@ -27,14 +23,6 @@ export class NavbarComponent implements OnInit {
        }
    });
 
-  }
-
-  ngOnInit() {
-    this.user = this.authService.authUser();
-  }
-
-  logOut() {
-    this.authService.logout().then(onResolve => this.router.navigate['/']);
   }
 
   toBlog() {

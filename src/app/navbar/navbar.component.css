@@ -1,0 +1,15 @@
+.navbar {
+    background-color: rgba(79, 148, 229, 0.75);
+    color: white;
+}
+
+.navbar-brand{
+    max-width: 30px;
+    display: block;
+}
+
+.nav-link:hover {
+    cursor: pointer;
+    font-weight: bold;
+    color: white;
+}

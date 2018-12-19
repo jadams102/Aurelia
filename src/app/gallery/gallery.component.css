@@ -1,0 +1,65 @@
+.container {
+    padding-top: 60px;
+}
+
+.card {
+    color: white;
+    background-color: rgba(42, 47, 92, 0.6);
+    margin-bottom: 25px;
+    min-height: 200px;
+}
+
+.card-body:hover {
+    cursor: pointer;
+    background-color: rgba(64, 70, 126, 0.6);
+}
+
+.card-body:active {
+    cursor: pointer;
+    background-color: rgba(29, 32, 56, 0.6);
+}
+
+ul { 
+    padding:0; 
+    width:100%; 
+    columns: 2;
+    list-style: none;
+}
+
+h3 {
+    text-align: center;
+    font-size: 4vw;
+}
+
+@media only screen and (min-width: 768px) {
+    ul {
+        columns: 3;
+    }
+
+    h3{
+        font-size: 3vw;
+    }
+  }
+
+  @media only screen and (min-width: 1500px) {
+    h3{
+        font-size: 50px;
+    }
+  }
+
+  .gallery-section {
+    background-image: url('../../assets/img/pricing-bg.jpg');
+    background-size: cover;
+    background-position: center left;
+    padding-top: 50px;
+    padding-bottom: 25px;
+}
+
+.btn-danger {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+

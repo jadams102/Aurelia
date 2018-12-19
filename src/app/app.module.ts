@@ -32,6 +32,7 @@ import { ContentService } from './services/content.service';
 import { GalleryDetailComponent } from './gallery-detail/gallery-detail.component';
 import { ImageService } from './services/image.service';
 import { GalleryImageDetailComponent } from './gallery-image-detail/gallery-image-detail.component';
+import { FooterComponent } from './footer/footer.component';
 
 export const firebaseConfig = {
   apiKey: config.apiKey,
@@ -57,7 +58,8 @@ export const firebaseConfig = {
     BlogEditComponent,
     BlogDetailComponent,
     GalleryDetailComponent,
-    GalleryImageDetailComponent,    
+    GalleryImageDetailComponent,
+    FooterComponent,    
   ],
   imports: [
     BrowserModule,

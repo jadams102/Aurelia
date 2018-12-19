@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { BlogPostService } from '../services/blog-post.service';
-import { FirebaseListObservable } from 'angularfire2/database';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import { BlogPost } from '../models/blog-post.model';
+import { AuthenticationService } from '../services/authentication.service';
+import { Observable } from 'rxjs/Observable';
+import * as firebase from 'firebase/app';
 
 @Component({
   selector: 'app-blog',
@@ -12,13 +14,15 @@ import { BlogPost } from '../models/blog-post.model';
 })
 export class BlogComponent implements OnInit {
   posts: BlogPost[];
+  user: Observable<firebase.User>
 
-  constructor(private postService: BlogPostService, private router: Router) { }
+  constructor(private authService: AuthenticationService, private postService: BlogPostService, private router: Router) { }
 
   ngOnInit() {
     this.postService.getPosts().subscribe(data => {
       this.posts = data.reverse();
     });
+    this.user = this.authService.authUser();
   }
 
   goToDetailPage(clickedPost) {
