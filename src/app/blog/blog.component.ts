@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BlogPostService } from '../services/blog-post.service';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs/Observable';
 import { BlogPost } from '../models/blog-post.model';
 import { AuthenticationService } from '../services/authentication.service';
 import { Observable } from 'rxjs/Observable';
@@ -26,7 +25,7 @@ export class BlogComponent implements OnInit {
   }
 
   goToDetailPage(clickedPost) {
-    this.router.navigate(['Blog', clickedPost.$key]);
+    this.router.navigate(['blog', clickedPost.$key]);
   }
 
   deletePost(post) {

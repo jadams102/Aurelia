@@ -1,3 +1,28 @@
 .container {
-    padding-top: 60px;
+    min-height: 90vw
+}
+
+.btn {
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.card-title {
+    margin-top: 20px;
+}
+
+.card {
+    color: white;
+    background-color: rgba(42, 47, 92, 0.6);
+    margin-bottom: 25px;
+    min-height: 200px;
+    display: block;
+}
+
+.gallery-section {
+    background-image: url('../../assets/img/gallery-bg.jpg');
+    background-size: cover;
+    background-position: center left;
+    padding-top: 90px;
+    padding-bottom: 25px;
 }

@@ -5,6 +5,11 @@
     padding-bottom: 20px;
 }
 
+a {
+    color: white;
+    font-weight: bold;
+}
+
 .contact-btn {
     display: block;
     margin-right: auto;
@@ -19,6 +24,13 @@
     font-weight: bold;
     font-family: sans-serif;
     margin-top: 15px;
+    outline: none;
+}
+
+.contact-btn:hover {
+    background-color: rgba(20, 22, 41, 0.6);
+    outline: none;
+    cursor: pointer;
 }
 
 .card {
@@ -35,6 +47,10 @@ textarea {
     min-height: 200px;
 }
 
+.card-title {
+    text-align: center;
+}
+
 /* Section 1 */
 .contact-section{
     background-image: url('../../assets/img/contact-bg.jpg');
@@ -42,4 +58,5 @@ textarea {
     background-position: center left;
     padding-top: 50px;
     padding-bottom: 25px;
+    min-height: 90vh;
 }

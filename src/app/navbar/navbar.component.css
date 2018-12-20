@@ -4,8 +4,8 @@
 }
 
 .navbar-brand{
-    max-width: 30px;
-    display: block;
+    margin-right: 0px;
+    display: inline-block;
 }
 
 .nav-link:hover {

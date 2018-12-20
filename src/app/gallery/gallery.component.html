@@ -2,16 +2,21 @@
   <div class="container">
     <div class="col">
       <ul>
-        <li class='card' *ngFor="let gallery of galleries">
-          <div class="card-body" (click)='goToDetailPage(gallery.name)'>
-            <h3>{{gallery.name}}</h3>
-          </div>
-          <div class="card-footer">
-            <button class="btn btn-danger" (click)='deleteGallery(gallery)'>Delete</button>
+        <li *ngFor="let gallery of galleries">
+          <div class="card" (click)='goToDetailPage(gallery.name)'>
+            <div class="card-body">
+              <h1>{{gallery.name}}</h1>
+                <p>Click to View Gallery</p>
+            </div>
+            <div *ngIf='(user|async)?.uid' class="card-footer">
+              <button class="btn btn-danger" (click)='deleteGallery(gallery)'>Delete</button>
+            </div>
           </div>
         </li>
       </ul>
     </div>
-    <app-upload></app-upload>
+    <div *ngIf='(user|async)?.uid'>
+      <app-gallery-add></app-gallery-add>
+    </div>
   </div>
 </div>

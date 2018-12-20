@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+
+p {
+    font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+    font-family: 'Kaushan Script', cursive;
+}
+
+h2, h3 {
+    font-family: 'Kaushan Script', cursive;
+}
+
+hr {
+    background-color: white;
+}

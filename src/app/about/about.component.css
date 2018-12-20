@@ -1,6 +1,7 @@
 /* Page Wide */
 .container {
     padding-top: 60px;
+    min-height: 90vh;
 }
 
 .contact-btn {
@@ -17,12 +18,20 @@
     font-weight: bold;
     font-family: sans-serif;
     margin-top: 15px;
+    outline: none;
+}
+
+.contact-btn:hover {
+    background-color: rgba(20, 22, 41, 0.6);
+    outline: none;
+    cursor: pointer;
 }
 
 .card {
     border-radius: 25px;
     color: white;
-    background-color: rgba(42, 47, 92, 0.6)
+    background-color: rgba(42, 47, 92, 0.6);
+    margin-bottom: 20px;
 }
 
 textarea {

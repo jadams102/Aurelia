@@ -4,3 +4,19 @@
     font-size: 20px;
     font-weight: bold;
 }
+
+.card{
+    color: black;
+}
+
+label {
+    color: black
+}
+
+textarea {
+    min-height: 100px;
+}
+
+.hidden {
+    display: none;
+}

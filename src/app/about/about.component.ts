@@ -3,6 +3,7 @@ import { ContentService } from '../services/content.service';
 import { AuthenticationService } from '../services/authentication.service';
 import { Observable } from 'rxjs/Observable';
 import * as firebase from 'firebase/app';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-about',
@@ -14,7 +15,7 @@ export class AboutComponent implements OnInit {
   updatingAbout = false;
   user: Observable<firebase.User>
 
-  constructor(private authService: AuthenticationService, private content: ContentService) { }
+  constructor(private router: Router, private authService: AuthenticationService, private content: ContentService) { }
 
   ngOnInit() {
     this.body = this.content.getContent().subscribe(data => {
@@ -22,6 +23,11 @@ export class AboutComponent implements OnInit {
     });
     this.user = this.authService.authUser();
   }
+
+  navToContact() {
+    this.router.navigate(['contact'])
+  }
+
 
   updateAbout(localContent) {
     this.content.updateContent(localContent);

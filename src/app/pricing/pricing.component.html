@@ -5,13 +5,14 @@
         <div class="card">
           <div class="card-body">
             <h2>Voyages & Pricing</h2>
+            <hr>
             <p style="white-space: pre-wrap;">
               {{body.voyages}}
             </p>
             <div *ngIf='(user|async)?.uid'>
               <button class='btn btn-warning' *ngIf='!updatingPricing' (click)='toggleForm()'>Update Pricing</button>
             </div>
-            <button class="contact-btn">Contact Us</button>
+            <button (click)='navToContact()' class="contact-btn">Contact Us</button>
           </div>
         </div>
       </div>
@@ -33,5 +34,6 @@
         </div>
       </div>
     </div>
+    <app-resources></app-resources>
   </div>
 </div>

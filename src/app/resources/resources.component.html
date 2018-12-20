@@ -1,0 +1,46 @@
+<div class="col">
+  <div class="card">
+    <div class="card-body">
+      <h1>Resources</h1>
+      <div *ngFor="let resource of resources | async" class="card card-resource">
+        <div class="card-body">
+          <a href="{{resource.link}}" target="_blank">
+            <h3 class="card-title">{{resource.name}}</h3>
+          </a>
+          <p>{{resource.description}}</p>
+          <button *ngIf='(user|async)?.uid' class="btn btn-danger" (click)="deleteResource(resource)">Delete</button>
+        </div>
+      </div>
+    </div>
+    <div *ngIf='(user|async)?.uid'>
+
+      <div *ngIf='!addingResource'>
+        <button class="btn btn-info post-btn" (click)='toggleNewResource()'>New Resource</button>
+      </div>
+    </div>
+    <div *ngIf='addingResource' ng-show="expand" class="card">
+      <div class="card-body">
+        <div class="card-title">
+          <h3>Add Resource</h3>
+        </div>
+        <div class="card-text">
+          <div class="form-group">
+            <label>Name</label>
+            <input placeholder="Enter the name of the resource..." #newName class="form-control">
+          </div>
+          <div class="form-group">
+            <label>URL</label>
+            <input #newLink type="url" placeholder="Enter the url to link to..." class="form-control">
+          </div>
+          <div class="form-group">
+            <label>Description</label>
+            <textarea #newDescription class="form-control"></textarea>
+          </div>
+          <button class="btn btn-info" (click)="submitResource(newName.value, newLink.value, newDescription.value); newName.value = ''; newLink.value = ''; newDescription.value = ''">Add
+            Resource</button>
+          <button class="btn btn-danger" (click)='toggleNewResource()'>Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

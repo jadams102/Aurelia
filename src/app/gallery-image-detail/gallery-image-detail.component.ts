@@ -3,6 +3,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { FirebaseObjectObservable } from 'angularfire2/database';
 import { Upload } from '../models/upload.model';
 import { ImageService } from '../services/image.service';
+import { AuthenticationService } from '../services/authentication.service';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-gallery-image-detail',
@@ -11,11 +13,13 @@ import { ImageService } from '../services/image.service';
 })
 export class GalleryImageDetailComponent implements OnInit {
 
-  constructor(private imageService: ImageService, private route: ActivatedRoute, private router: Router,) { }
+  constructor(private authService: AuthenticationService, private imageService: ImageService, private route: ActivatedRoute, private router: Router,) { }
 
   galleryName: string;
   imageKey: string;
   imageToDisplay: Upload;
+  user: Observable<firebase.User>
+
 
   ngOnInit() {
     this.route.params.forEach((urlParameters) => {
@@ -25,10 +29,17 @@ export class GalleryImageDetailComponent implements OnInit {
     this.imageService.getImageById(this.galleryName.toLowerCase(), this.imageKey).subscribe( data => {
       this.imageToDisplay = data;
     });
+    this.user = this.authService.authUser();
+  }
+
+  navToGallery() {
+    this.router.navigate(['gallery', this.imageToDisplay.gallery])
+    window.location.reload();
   }
 
   deleteImage() {
     this.imageService.removeImage(this.imageToDisplay)
-    this.router.navigate(['Gallery']);
+    this.router.navigate(['gallery', this.imageToDisplay.gallery]);
+    window.location.reload();
   }
 }

@@ -5,6 +5,8 @@ import { Upload } from '../models/upload.model';
 import { Router } from '@angular/router';
 import { ImageService } from '../services/image.service';
 import { Gallery } from '../models/gallery.model';
+import { Observable } from 'rxjs/Observable';
+import { AuthenticationService } from '../services/authentication.service';
 
 @Component({
   selector: 'app-gallery',
@@ -12,15 +14,18 @@ import { Gallery } from '../models/gallery.model';
   styleUrls: ['./gallery.component.css']
 })
 export class GalleryComponent implements OnInit, OnChanges {
+  user: Observable<firebase.User>
+
 
   galleries: any;
 
-  constructor( private galleryService: GalleryService, private router: Router, private imageService: ImageService) {}
+  constructor(private authService: AuthenticationService, private galleryService: GalleryService, private router: Router, private imageService: ImageService) {}
 
   ngOnInit() {
     this.galleries = this.galleryService.getGalleries().subscribe(data => {
       this.galleries = data;
     });
+    this.user = this.authService.authUser();
   }
 
   ngOnChanges() {
@@ -38,6 +43,6 @@ export class GalleryComponent implements OnInit, OnChanges {
   }
 
   goToDetailPage(gallery) {
-    this.router.navigate(['Gallery', gallery]);
+    this.router.navigate(['gallery', gallery]);
   }
 }

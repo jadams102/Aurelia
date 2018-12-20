@@ -9,41 +9,28 @@
               {{body.about}}
             </p>
             <div *ngIf='(user|async)?.uid'>
-                <button class='btn btn-warning' *ngIf='!updatingAbout' (click)='toggleForm()'>Update About</button>
+              <button class='btn btn-warning' *ngIf='!updatingAbout' (click)='toggleForm()'>Update About</button>
             </div>
-            <button class="contact-btn">Contact Us</button>
+            <button (click)='navToContact()' class="contact-btn">Contact Us</button>
           </div>
         </div>
       </div>
       <div *ngIf='!updatingAbout' class="col-sm-12 col-md-6 col-lg-5 desktop-images">
-        <div class="row">
           <div class="card">
-            <div class="card-body">
               <img class='aboutImg' src="assets/img/about-2.JPG" alt="">
             </div>
-          </div>
+        <div class="card">
+            <img class='aboutImg' src="assets/img/about-3.jpg" alt="">
         </div>
-        <div class="row">
-          <div class="card">
-            <div class="card-body">
-              <img class='aboutImg' src="assets/img/about-3.jpg" alt="">
-            </div>
+        <div class="card">
+            <img class='aboutImg' src="assets/img/about-1.jpg" alt="">
           </div>
-        </div>
-        <div class="row">
-          <div class="card">
-            <div class="card-body">
-              <img class='aboutImg' src="assets/img/about-1.jpg" alt="">
-            </div>
-          </div>
-        </div>
       </div>
       <div *ngIf='updatingAbout' class="col-sm-12 col-md-6 col-lg-5">
         <div class="card">
           <div class="card-body">
-            <div class="card-title">
-              <h3>Update About</h3>
-            </div>
+            <h3 class="card-title">Update About</h3>
+            <hr>
             <div class="card-text">
               <div class="form-group">
                 <label>Content</label>
@@ -60,19 +47,16 @@
       <div class="row">
         <div class="col">
           <div class="card">
-            <div class="card-body">
               <img class='aboutImg' src="assets/img/about-1.jpg" alt="">
             </div>
-          </div>
         </div>
         <div class="col">
           <div class="card">
-            <div class="card-body">
               <img class='aboutImg' src="assets/img/about-2.JPG" alt="">
             </div>
-          </div>
         </div>
       </div>
     </div>
+    <app-resources></app-resources>
   </div>
 </div>

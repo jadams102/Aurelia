@@ -1,8 +1,9 @@
-<button *ngIf='!addingImages' class="btn btn-info" (click)=toggleAddingImages()>Add Images</button>
+<button *ngIf='!addingImages' class="btn btn-info" (click)=toggleAddingImages()>Add Images to {{galleryName}}</button>
+<button *ngIf='addingImages' class="btn btn-info" (click)=toggleAddingImages()>Close Upload Window</button>
 <div *ngIf='addingImages' class="card">
   <div class="card-body">
     <div class="card-title">
-      <h2 class="heading">Upload New Images</h2>
+      <h2 class="heading">Upload New Images to {{galleryName}}</h2>
     </div>
     <div class="card-text">
       <div *ngIf="upload">
@@ -20,7 +21,7 @@
       </div>
       <div class="form-group">
         <label>Description</label>
-        <input type="text" [(ngModel)]="description" placeholder="Description..." class="form-control">
+        <textarea [(ngModel)]="description" placeholder="Description..." class="form-control"></textarea>
       </div>
       <div *ngIf='galleries' class="form-group">
         <label>Gallery</label>
@@ -28,13 +29,7 @@
           <option *ngFor='let gallery of galleries' value="{{gallery.name}}">{{gallery.name}}</option>
         </select>
       </div>
-      <div class="form-group">
-        <label>Add Gallery</label>
-        <input placeholder="Enter New Gallery Name..." class="form-control" type="text" #newGallery>
-      </div>
-      <button class="btn btn-primary" (click)='addGallery(newGallery.value)'>Add Gallery</button>
-      <button class="btn btn-primary" (click)="uploadFiles(title, description, gallery)">Upload Images</button>
-      <button class="btn btn-info" (click)=toggleAddingImages()>Done</button>
+      <button class="btn btn-primary" (click)="uploadFiles(title, description, gallery)">Upload Selected Image</button>
     </div>
   </div>
 </div>

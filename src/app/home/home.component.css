@@ -2,10 +2,6 @@
 
 /* Page Wide */
 
-.container {
-    padding-top: 60px;
-}
-
 .contact-btn {
     display: block;
     margin-right: auto;
@@ -22,6 +18,12 @@
     margin-top: 15px;
 }
 
+.contact-btn:hover {
+    background-color: rgba(20, 22, 41, 0.6);
+    outline: none;
+    cursor: pointer;
+}
+
 .card {
     border-radius: 25px;
     color: white;
@@ -34,12 +36,18 @@
     background-image: url('../../assets/img/home-sec1bg.jpg');
     background-size: cover;
     background-position: bottom;
-    padding-top: 50px;
-    padding-bottom: 25px;
+    padding-top: 100px;
+    padding-bottom: 190px;
 }
 
+@media only screen and (min-width: 768px) {
+    #section1 {
+        padding-top: 190px;
+        padding-bottom: 190px;
+    }
+  }
+
 hr {
-    color: white;
     background-color: white;
 }
 

@@ -7,6 +7,7 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { LocationStrategy, HashLocationStrategy} from '@angular/common';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { HttpModule } from '@angular/http';
 
 
 import { AppComponent } from './app.component';
@@ -33,6 +34,10 @@ import { GalleryDetailComponent } from './gallery-detail/gallery-detail.componen
 import { ImageService } from './services/image.service';
 import { GalleryImageDetailComponent } from './gallery-image-detail/gallery-image-detail.component';
 import { FooterComponent } from './footer/footer.component';
+import { GalleryAddComponent } from './gallery-add/gallery-add.component';
+import { ResourcesComponent } from './resources/resources.component';
+import { ResourceService } from './services/resources.service';
+import { Http } from '@angular/http';
 
 export const firebaseConfig = {
   apiKey: config.apiKey,
@@ -59,16 +64,19 @@ export const firebaseConfig = {
     BlogDetailComponent,
     GalleryDetailComponent,
     GalleryImageDetailComponent,
-    FooterComponent,    
+    FooterComponent,
+    GalleryAddComponent,
+    ResourcesComponent,    
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     FormsModule,
     routing,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule
   ],
-  providers: [ AuthGuard, { provide: LocationStrategy, useClass: HashLocationStrategy }, AngularFireAuth, AuthenticationService, ContentService, UploadService, BlogPostService, GalleryService, ImageService],
+  providers: [ ResourceService, AuthGuard, { provide: LocationStrategy, useClass: HashLocationStrategy }, AngularFireAuth, AuthenticationService, ContentService, UploadService, BlogPostService, GalleryService, ImageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

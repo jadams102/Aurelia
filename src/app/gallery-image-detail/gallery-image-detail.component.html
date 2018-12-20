@@ -1,8 +1,21 @@
-<p>
-  gallery-image-detail works!
-</p>
-<div class="container">
-  <img src="{{imageToDisplay?.url}}" alt="">
-  <button (click)='deleteImage()'>Delete</button>
+<div class="gallery-section">
+    <div class="container">
+        <div class="card">
+            <img class="card-img-top" src="{{imageToDisplay?.url}}" alt="">
+            <div class="card-body">
+                <h2 class="card-title">{{imageToDisplay?.name}}</h2>
+              <p>{{imageToDisplay?.description}}</p>
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-info" (click)='navToGallery()'>Back To Gallery</button>
+                <div *ngIf='(user|async)?.uid'>
+
+                <button class="btn btn-danger" (click)='deleteImage()'>Delete</button>
+            </div>
+              </div>
+
+        </div>
+      </div>
 </div>
+
 

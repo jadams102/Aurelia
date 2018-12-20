@@ -1,22 +1,26 @@
 .container {
     padding-top: 60px;
+    min-height: 90vh;
 }
+
 
 .card {
     color: white;
     background-color: rgba(42, 47, 92, 0.6);
     margin-bottom: 25px;
     min-height: 200px;
+    display: flex;
+    justify-content: center;
 }
 
-.card-body:hover {
+.card:hover {
     cursor: pointer;
     background-color: rgba(64, 70, 126, 0.6);
 }
 
-.card-body:active {
+.card:active {
     cursor: pointer;
-    background-color: rgba(29, 32, 56, 0.6);
+    background-color: rgba(0, 0, 0, 0.719);
 }
 
 ul { 
@@ -26,29 +30,31 @@ ul {
     list-style: none;
 }
 
-h3 {
+li {
+    break-inside: avoid-column;
+}
+
+h1 {
+    margin-top: 30%;
+    margin-bottom: 30%;
+    align-content: center;
+    display: block;
     text-align: center;
-    font-size: 4vw;
+}
+
+p {
+    color: rgba(255, 255, 255, 0.6);
+    text-align: center;
 }
 
 @media only screen and (min-width: 768px) {
     ul {
         columns: 3;
     }
-
-    h3{
-        font-size: 3vw;
-    }
   }
 
-  @media only screen and (min-width: 1500px) {
-    h3{
-        font-size: 50px;
-    }
-  }
-
-  .gallery-section {
-    background-image: url('../../assets/img/pricing-bg.jpg');
+.gallery-section {
+    background-image: url('../../assets/img/gallery-bg.jpg');
     background-size: cover;
     background-position: center left;
     padding-top: 50px;

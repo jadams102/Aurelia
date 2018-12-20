@@ -39,8 +39,8 @@ export class ImageService {
   }
 
   removeImage(image: Upload) {
-    let imageEntry = this.getImageById(image.gallery, image.$key);
+    let imageEntry = this.getImageById(image.gallery.toLowerCase(), image.$key);
+    imageEntry.remove();
     this.uploadService.deleteFile(image.title, image.gallery.toLowerCase());
-    imageEntry.remove()
   }
 }

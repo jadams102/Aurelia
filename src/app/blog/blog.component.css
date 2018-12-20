@@ -1,6 +1,7 @@
 /* Page Wide */
 .container {
     padding-top: 60px;
+    min-height: 90vh;
 }
 
 .card {
