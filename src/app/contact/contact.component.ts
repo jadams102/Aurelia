@@ -14,7 +14,7 @@ export class ContactComponent implements OnInit {
   }
 
   sendMessage(email: string, message: string){
-    var destinationEmail = "joeladamsdesign@gmail.com";
+    var destinationEmail = "info@schooneraurelia.com";
     var form = document.createElement('form');
     form.setAttribute("action", "https://formspree.io/" + destinationEmail)
     form.setAttribute("method", "POST")
