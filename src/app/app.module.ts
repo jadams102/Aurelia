@@ -37,7 +37,6 @@ import { FooterComponent } from './footer/footer.component';
 import { GalleryAddComponent } from './gallery-add/gallery-add.component';
 import { ResourcesComponent } from './resources/resources.component';
 import { ResourceService } from './services/resources.service';
-import { Http } from '@angular/http';
 
 export const firebaseConfig = {
   apiKey: config.apiKey,
