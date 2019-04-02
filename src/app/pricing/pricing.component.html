@@ -9,7 +9,7 @@
             <h2>Voyages & Pricing</h2>
             <hr>
             <p style="white-space: pre-line">
-              {{body.voyages}}
+              {{(body | async)?.voyages}}
             </p>
             <div *ngIf='(user|async)?.uid'>
               <button class='btn btn-warning' *ngIf='!updatingPricing' (click)='toggleForm()'>Update Pricing</button>

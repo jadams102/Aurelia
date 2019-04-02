@@ -19,9 +19,7 @@ export class PricingComponent implements OnInit {
   constructor(private authService: AuthenticationService, private content: ContentService, private router: Router) { }
 
   ngOnInit() {
-    this.body = this.content.getContent().subscribe(data => {
-      this.body = data
-    });
+    this.body = this.content.getContent()
     this.user = this.authService.authUser();
   }
 

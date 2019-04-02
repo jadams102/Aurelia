@@ -39,27 +39,22 @@ export class NavbarComponent implements OnInit {
 
   toBlog() {
     this.router.navigate(['blog'])
-    window.location.reload();
   }
 
   toPricing() {
     this.router.navigate(['pricing'])
-    window.location.reload();
   }
 
   toGallery() {
     this.router.navigate(['gallery'])
-    window.location.reload();
   }
 
   toAboutUs() {
     this.router.navigate(['about'])
-    window.location.reload();
   }
 
   toContact() {
     this.router.navigate(['contact'])
-    window.location.reload();
   }
 
 }
